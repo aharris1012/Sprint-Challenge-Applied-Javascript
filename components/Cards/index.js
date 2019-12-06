@@ -17,3 +17,82 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+
+
+
+axios.get("https://lambda-times-backend.herokuapp.com/articles")
+.then(response =>{
+    // console.log(response);
+    let articles = response.data.articles
+        let js = articles.javascript
+        let boot = articles.bootstrap
+        let jquery = articles.jquery
+        let node = articles.node
+        let tech = articles.technology
+
+        js.forEach(element => {
+            document.querySelector('.cards-container').appendChild(Cards(element))
+        });
+
+        boot.forEach(element => {
+            document.querySelector('.cards-container').appendChild(Cards(element))
+        });
+
+        jquery.forEach(element => {
+            document.querySelector('.cards-container').appendChild(Cards(element))
+        });
+
+        node.forEach(element => {
+            document.querySelector('.cards-container').appendChild(Cards(element))
+        });
+
+        tech.forEach(element => {
+            document.querySelector('.cards-container').appendChild(Cards(element))
+        });
+    })
+
+    .catch(error => {
+        console.log(error)
+    })
+
+
+
+
+
+function Cards(Data){
+
+
+        
+    const Card=document.createElement("div")
+    const HeadLine=document.createElement("div")
+    const Author=document.createElement("div")
+    const ImgContainer=document.createElement("div")
+    const Img=document.createElement("img")
+    const ByAuthor= document.createElement("span")
+
+    Card.classList.add("card")
+    HeadLine.classList.add("headline")
+    Author.classList.add("author")
+    ImgContainer.classList.add("img-container")
+    
+
+    Card.appendChild(HeadLine)
+    Card.appendChild(Author)
+    Card.appendChild(ImgContainer)
+    ImgContainer.appendChild(Img)
+    Card.appendChild(ByAuthor)
+
+    HeadLine.textContent=Data.headline;
+    Img.src= Data.authorPhoto;
+    ByAuthor.textContent= `By Author ${Data.authorName}`;
+
+        const EntryCards= document.querySelector(".cards-container");
+    EntryCards.appendChild(Card)
+
+        return Card;
+    
+}//closes Cards//
+
+
+
