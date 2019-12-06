@@ -35,11 +35,11 @@ function Header() {
     LambTimes.textContent="Lambda Times";
     Temp.textContent="98 Deg";
 
-    EntryHeader.prepend(Head);
+    
 
    return Head;
 }
 
 // console.log(Header)
-
+EntryHeader.appendChild(Head);
 
