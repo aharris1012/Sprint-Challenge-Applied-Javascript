@@ -10,25 +10,29 @@
 
 axios.get("https://lambda-times-backend.herokuapp.com/topics")
 .then(response =>{
-console.log(response);
+// console.log(response);
 })
+
+
 .catch(response =>{
     console.log(response,error);
-})
+});
+
+const EntryTabs= document.querySelector(".tabs");
 
 function Tabs(tab){
     
-    const Tab=document.createElement("div")
+    let Tab=document.createElement("div")
 
     Tab.classList.add("tab")
 
     Tab.textContent=tab.data.topics[0];
 
     
-    BeginningTabs.prepend(Tab);
+    EntryTabs.prepend(Tab);
     return Tab
 
 
 }
-const BeginningTabs= document.querySelector(".tabs")
+
 console.log (Tabs)
