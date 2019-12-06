@@ -238,6 +238,10 @@ body {
   flex-direction: row;
   margin-top: 15px;
 }
+
+img{
+  width: 20%;
+}
 .cards-container .card .author .img-container {
   padding-right: 10px;
   border-right: 1px solid lightgrey;
