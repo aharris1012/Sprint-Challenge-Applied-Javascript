@@ -26,19 +26,16 @@ function Header() {
     Head.appendChild(Temp);
 
 
-    Head.textContent=""
-    date.textContent=""
-    LambTimes.textContent=""
-    Temp.textContent=""
     
+    date.textContent="March 28,2019"
+    LambTimes.textContent="Lambda Times"
+    Temp.textContent="98 Deg"
 
-
-
-
-
-
+return Head
 
 
 }
+const BeginningHeader= document.querySelector(".header-container");
+// console.log(Header)
 
 
