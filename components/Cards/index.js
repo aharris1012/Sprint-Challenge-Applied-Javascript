@@ -18,36 +18,52 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-const EntryCards= document.querySelector(".cards-container");
 
 
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then(response =>{
     // console.log(response);
-    const Topics=Object.values(response.data.articles);
-    Topics.forEach( e =>{
-        e.forEach(x =>{
-            EntryCards.appendChild(Cards(x.headline, x.authorPhoto, x.authorName));
+    let articles = response.data.articles
+        let js = articles.javascript
+        let boot = articles.bootstrap
+        let jquery = articles.jquery
+        let node = articles.node
+        let tech = articles.technology
 
+        js.forEach(element => {
+            document.querySelector('.cards-container').appendChild(Cards(element))
         });
-    });
-})
-.catch(error=>{
-    console.log(error);
-});
+
+        boot.forEach(element => {
+            document.querySelector('.cards-container').appendChild(Cards(element))
+        });
+
+        jquery.forEach(element => {
+            document.querySelector('.cards-container').appendChild(Cards(element))
+        });
+
+        node.forEach(element => {
+            document.querySelector('.cards-container').appendChild(Cards(element))
+        });
+
+        tech.forEach(element => {
+            document.querySelector('.cards-container').appendChild(Cards(element))
+        });
+    })
+
+    .catch(error => {
+        console.log(error)
+    })
 
 
 
 
-function Cards(title, Pic, name){
-    for(var key in response.data.articles){
 
-        let name= key;
-        console.log(name);
+function Cards(Data){
 
-        for (let i =0; i < response.data.articles[name].length; i++){
-    console.log(i);
+
+        
     const Card=document.createElement("div")
     const HeadLine=document.createElement("div")
     const Author=document.createElement("div")
@@ -67,11 +83,16 @@ function Cards(title, Pic, name){
     ImgContainer.appendChild(Img)
     Card.appendChild(ByAuthor)
 
-    HeadLine.textContent= title;
-    Img.src= Pic;
-    ByAuthor.textContent=name;
+    HeadLine.textContent=Data.headline;
+    Img.src= Data.authorPhoto;
+    ByAuthor.textContent= `By Author ${Data.authorName}`;
 
-        }//loop lenght//
-    }//closes loop// 
-    return Card;
+        const EntryCards= document.querySelector(".cards-container");
+    EntryCards.appendChild(Card)
+
+        return Card;
+    
 }//closes Cards//
+
+
+

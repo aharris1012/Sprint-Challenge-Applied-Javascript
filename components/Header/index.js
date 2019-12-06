@@ -9,7 +9,8 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 const EntryHeader= document.querySelector(".header-container");
- 
+EntryHeader.appendChild(Header());
+
 function Header() {
 
     
@@ -41,5 +42,5 @@ function Header() {
 }
 
 // console.log(Header)
-EntryHeader.appendChild(Head);
+
 
