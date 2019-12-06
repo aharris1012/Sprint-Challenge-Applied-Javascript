@@ -21,11 +21,16 @@
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then(response =>{
-    console.log(response)
+    console.log(response);
+    Cards(response);
+    EntryCards.appendChild(Card);
+
 })
-.catch(response =>{
-    console.log(response, error)
-})
+.catch(error=>{
+    console.log(error);
+});
+
+const EntryCards= document.querySelector(".cards-container");
 
 
 function Cards(){
@@ -63,4 +68,3 @@ function Cards(){
     }//closes loop// 
     return Card
 }//closes Cards//
-const BeginningCards= document.querySelector(".cards-container");

@@ -30,7 +30,7 @@ function Tabs(tab){
 
     
     EntryTabs.prepend(Tab);
-    return Tab
+    return Tab;
 
 
 }
