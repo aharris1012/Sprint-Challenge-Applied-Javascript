@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+-Document Object Model
+
 2. What is an event?
+
+-It allows Js register events like a click,double click, the move of the mouse etc.
 
 3. What is an event listener?
 
+-Is the methos that allows the event to happen, it fires the event.
+
 4. Why would we convert a NodeList into an Array?
 
+-Because a node is not JS we turn it into an array to better manipulate.
+
 5. What is a component?
+
+-Is a part of code that creates the event, even listener while creating the element.
 
 ### Git Set up
 
